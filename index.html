@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IVP Editor — A themeable code editor</title>
+<meta name="description" content="IVP Editor is a fast, themeable code editor with live syntax highlighting for Python, C, C++, C#, and Batch, an interactive console, and a smooth animated caret. Free for Windows.">
+<meta name="theme-color" content="#0b0d12">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="IVP Editor — A themeable code editor">
+<meta property="og:description" content="Multi-language syntax highlighting, six built-in themes, an interactive console, and a smooth animated caret. Free for Windows.">
+<meta property="og:image" content="./assets/img/social-preview.svg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">&gt;_</span>
+      <span class="brand-name">IVP<span class="brand-dim">Editor</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#themes">Themes</a>
+      <a href="#console">Console</a>
+      <a href="#shortcuts">Shortcuts</a>
+      <a href="#download" class="nav-cta">Download</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">// a code editor that colors outside the lines</p>
+        <h1>Write code<br>somewhere <span class="accent-sweep">colorful</span>.</h1>
+        <p class="hero-sub">
+          IVP Editor is a fast desktop editor with real syntax highlighting for five
+          languages, six built-in themes, an interactive console you can actually type
+          into, and a caret that glides instead of jumping.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/IVPCodes/IVP-Editor/releases/download/v1.1.0/IVP_Editor_Setup.exe">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 1a1 1 0 0 1 1 1v6.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L7 8.59V2a1 1 0 0 1 1-1Zm-6 12a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Z"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/IVPCodes/IVP-Editor">
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.23.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.17-.89-1.17-.72-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.23 1.87.87 2.33.67.07-.52.28-.87.5-1.08-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.94.29.25.54.73.54 1.48l-.01 2.2c0 .21.14.46.55.38A8 8 0 0 0 8 0Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <p class="hero-meta">Windows installer · free · Python source also on GitHub</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="editor-mock" id="heroMock" data-theme="dark-plus">
+          <div class="mock-titlebar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="mock-title">IVP Editor</span>
+          </div>
+          <div class="mock-tabs">
+            <div class="mock-tab is-active">fibonacci.py</div>
+            <div class="mock-tab">sort.c</div>
+            <div class="mock-tab">Program.cs</div>
+          </div>
+          <div class="mock-body">
+            <div class="mock-gutter" aria-hidden="true">1<br>2<br>3<br>4<br>5</div>
+            <pre class="mock-code" aria-hidden="true"><code
+><span class="tok-kw">def</span> <span class="tok-fn">fibonacci</span>(<span class="tok-self">n</span>):
+    <span class="tok-com"># smooth, isn't it?</span>
+    <span class="tok-kw">if</span> n &lt;= <span class="tok-num">1</span>:
+        <span class="tok-kw">return</span> n
+    <span class="mock-caret-line">    <span class="tok-kw">return</span> <span class="tok-fn">fibonacci</span>(n<span class="tok-op">-</span><span class="tok-num">1</span>) + <span class="tok-fn">fibonacci</span>(n<span class="tok-op">-</span><span class="tok-num">2</span>)<span class="hero-caret" id="heroCaret"></span></span></code></pre>
+          </div>
+          <div class="mock-statusbar" aria-hidden="true">
+            <span class="mock-lang">Python</span>
+            <span>Ln 5, Col 44</span>
+          </div>
+        </div>
+
+        <div class="theme-picker" role="group" aria-label="Preview a theme">
+          <button class="theme-chip is-active" data-theme="dark-plus" style="--chip:#0e639c">Dark+</button>
+          <button class="theme-chip" data-theme="dracula" style="--chip:#bd93f9">Dracula</button>
+          <button class="theme-chip" data-theme="monokai" style="--chip:#a6e22e">Monokai</button>
+          <button class="theme-chip" data-theme="nord" style="--chip:#88c0d0">Nord</button>
+          <button class="theme-chip" data-theme="solarized-light" style="--chip:#268bd2">Solarized</button>
+          <button class="theme-chip" data-theme="pure-light" style="--chip:#0969da">Pure Light</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <p class="eyebrow">// features</p>
+      <h2>Everything a small editor should do, done properly.</h2>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h16v4H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h3>Five languages, one editor</h3>
+          <p>Python, C, C++, C#, and Batch all get real syntax highlighting. Open a file and the language is detected automatically — or pick one yourself from the Language menu.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 9l3 3-3 3M13 15h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>A console you can talk to</h3>
+          <p>Run a file with F5 and type straight into the output, right where the prompt is. <code>set /p name=</code>, <code>scanf</code>, <code>input()</code> — they all just work.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h6M13 12h1M17 12h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 6v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <h3>A caret that glides</h3>
+          <p>The insertion point eases between positions instead of snapping, and scrolling animates too. Small detail, makes everything feel calmer.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17M12 3.5a8.5 8.5 0 0 0 0 17" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3>Six themes, zero fuss</h3>
+          <p>Dark+, Dracula, Monokai, Nord, Solarized Light, and Pure Light — switch instantly from the View menu or the theme picker above.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v16M6 8h6M6 14h9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 4v16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 3.4"/></svg>
+          <h3>Shortcuts that respect your hands</h3>
+          <p>Duplicate, delete, and reorder lines without leaving the keyboard. Toggle comments per-language. Find, replace, and jump to any line.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6l3-2.5h11l3 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h3>Tabs, saved settings, no fuss</h3>
+          <p>Work across multiple files at once. Your theme, font, and preferences are remembered the next time you open the editor.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THEMES ================= -->
+  <section class="section section-alt" id="themes">
+    <div class="wrap">
+      <p class="eyebrow">// themes</p>
+      <h2>Pick your palette.</h2>
+      <p class="section-lede">Every theme below is the real color set from the app — the same one used in the preview at the top of the page.</p>
+
+      <div class="swatch-grid">
+        <div class="swatch-card" data-theme="dark-plus">
+          <div class="swatch-preview"></div>
+          <span class="swatch-name">Dark+</span>
+        </div>
+        <div class="swatch-card" data-theme="dracula">
+          <div class="swatch-preview"></div>
+          <span class="swatch-name">Dracula</span>
+        </div>
+        <div class="swatch-card" data-theme="monokai">
+          <div class="swatch-preview"></div>
+          <span class="swatch-name">Monokai</span>
+        </div>
+        <div class="swatch-card" data-theme="nord">
+          <div class="swatch-preview"></div>
+          <span class="swatch-name">Nord</span>
+        </div>
+        <div class="swatch-card" data-theme="solarized-light">
+          <div class="swatch-preview"></div>
+          <span class="swatch-name">Solarized Light</span>
+        </div>
+        <div class="swatch-card" data-theme="pure-light">
+          <div class="swatch-preview"></div>
+          <span class="swatch-name">Pure Light</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONSOLE DEMO ================= -->
+  <section class="section" id="console">
+    <div class="wrap console-grid">
+      <div class="console-copy">
+        <p class="eyebrow">// console</p>
+        <h2>Programs that ask questions get answers.</h2>
+        <p>
+          Most editors give you a read-only output box, which falls apart the moment a
+          script calls <code>set /p</code>, <code>scanf</code>, or <code>input()</code>.
+          IVP Editor's console is genuinely interactive — the text you type lands right
+          after the prompt, exactly like a real terminal.
+        </p>
+      </div>
+
+      <div class="terminal" id="terminalDemo">
+        <div class="mock-titlebar">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="mock-title">Console</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">$ myscript.bat</div>
+          <div class="terminal-line">Enter your name: <span id="terminalTyped"></span><span class="terminal-caret" id="terminalCaret"></span></div>
+          <div class="terminal-line terminal-out" id="terminalReply" hidden>Hello, Ada! Nice to meet you.</div>
+          <div class="terminal-line terminal-dim" id="terminalDone" hidden>[process finished with exit code 0]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHORTCUTS ================= -->
+  <section class="section section-alt" id="shortcuts">
+    <div class="wrap">
+      <p class="eyebrow">// shortcuts</p>
+      <h2>Built for the keyboard.</h2>
+
+      <div class="shortcut-grid">
+        <div class="shortcut-col">
+          <div class="shortcut-row"><span>New / Open / Save</span><span class="keys"><kbd>Ctrl</kbd><kbd>N</kbd> · <kbd>Ctrl</kbd><kbd>O</kbd> · <kbd>Ctrl</kbd><kbd>S</kbd></span></div>
+          <div class="shortcut-row"><span>Save As</span><span class="keys"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>S</kbd></span></div>
+          <div class="shortcut-row"><span>Preferences</span><span class="keys"><kbd>Ctrl</kbd><kbd>,</kbd></span></div>
+          <div class="shortcut-row"><span>Run current file</span><span class="keys"><kbd>F5</kbd></span></div>
+          <div class="shortcut-row"><span>Stop run</span><span class="keys"><kbd>Shift</kbd><kbd>F5</kbd></span></div>
+          <div class="shortcut-row"><span>Toggle console</span><span class="keys"><kbd>Ctrl</kbd><kbd>`</kbd></span></div>
+        </div>
+        <div class="shortcut-col">
+          <div class="shortcut-row"><span>Duplicate line</span><span class="keys"><kbd>Ctrl</kbd><kbd>D</kbd></span></div>
+          <div class="shortcut-row"><span>Delete line</span><span class="keys"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>K</kbd></span></div>
+          <div class="shortcut-row"><span>Move line up / down</span><span class="keys"><kbd>Alt</kbd><kbd>↑</kbd> / <kbd>Alt</kbd><kbd>↓</kbd></span></div>
+          <div class="shortcut-row"><span>Toggle comment</span><span class="keys"><kbd>Ctrl</kbd><kbd>/</kbd></span></div>
+          <div class="shortcut-row"><span>Find &amp; replace</span><span class="keys"><kbd>Ctrl</kbd><kbd>F</kbd> / <kbd>Ctrl</kbd><kbd>H</kbd></span></div>
+          <div class="shortcut-row"><span>Go to line</span><span class="keys"><kbd>Ctrl</kbd><kbd>G</kbd></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DOWNLOAD ================= -->
+  <section class="section" id="download">
+    <div class="wrap">
+      <div class="download-card">
+        <div class="download-copy">
+          <p class="eyebrow">// download</p>
+          <h2>Get IVP Editor</h2>
+          <p>One installer, no account, no telemetry. Building on macOS or Linux? Run it from source with Python and PySide6 — link on GitHub.</p>
+        </div>
+        <div class="download-actions">
+          <a class="btn btn-primary btn-lg" href="https://github.com/IVPCodes/IVP-Editor/releases/download/v1.1.0/IVP_Editor_Setup.exe">
+            <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 1a1 1 0 0 1 1 1v6.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L7 8.59V2a1 1 0 0 1 1-1Zm-6 12a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Z"/></svg>
+            Download for Windows
+          </a>
+          <span class="download-file">IVP_Editor_Setup.exe</span>
+          <a class="btn btn-ghost" href="https://github.com/IVPCodes/IVP-Editor">Get the source on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">&gt;_</span>
+        <span class="brand-name">IVP<span class="brand-dim">Editor</span></span>
+      </a>
+      <p class="footer-credit">Built by <strong>IVPCodes</strong> / <strong>Atez</strong>.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://github.com/IVPCodes/IVP-Editor">GitHub</a>
+      <a href="https://github.com/IVPCodes/IVP-Editor/releases/download/v1.1.0/IVP_Editor_Setup.exe">Download</a>
+      <a href="#features">Features</a>
+      <a href="#shortcuts">Shortcuts</a>
+    </div>
+
+    <div class="footer-contact">
+      <span class="footer-contact-label">Questions, bugs, ideas?</span>
+      <button class="discord-chip" id="discordCopy" type="button" aria-label="Copy Discord handle root_atez">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.3 5.4A18.3 18.3 0 0 0 15.7 4c-.2.4-.5.9-.6 1.3a17 17 0 0 0-5 0A9 9 0 0 0 9.4 4a18.2 18.2 0 0 0-4.6 1.4C2 9.9 1.3 14.3 1.6 18.6a18.5 18.5 0 0 0 5.6 2.8c.5-.6.8-1.3 1.1-2a12 12 0 0 1-1.8-.9l.4-.3a13 13 0 0 0 10.2 0l.4.3c-.6.3-1.2.6-1.8.9.3.7.6 1.4 1.1 2a18.4 18.4 0 0 0 5.6-2.8c.4-5-.9-9.3-2.9-13.2ZM8.9 15.8c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.2 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg>
+        <span id="discordText">@root_atez</span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year"></span> IVPCodes / Atez. IVP Editor is free to use.</span>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
